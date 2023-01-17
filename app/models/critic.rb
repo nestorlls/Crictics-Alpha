@@ -1,4 +1,7 @@
 class Critic < ApplicationRecord
+  # validates
+  validates :body, presence: true
+  validates :title, presence: true, length: { maximum: 40 }
   # Association
   belongs_to :user, counter_cache: true
   belongs_to :criticable, polymorphic: true

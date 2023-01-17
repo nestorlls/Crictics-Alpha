@@ -1,4 +1,8 @@
 class Platform < ApplicationRecord
+  # validates
+  validates :name, :cagetory, presence: true
+  validates :name, uniqueness: true
+  # Association
   has_and_belongs_to_many :games
   # Enum
   enum category: {
